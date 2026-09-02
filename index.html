@@ -1,0 +1,4764 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="DKAVIZZi — Desenvolvedor Web. Sites modernos, experiências digitais, interfaces e projetos interativos.">
+
+<meta name="author"
+content="DKAVIZZi">
+
+<meta name="theme-color"
+content="#0b7cff">
+
+<title>DKAVIZZi — Desenvolvedor Web</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+    background:#f7faff;
+    color:#101828;
+
+    overflow-x:hidden;
+
+    transition:
+    background .3s,
+    color .3s;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root{
+
+    --blue:#0878ff;
+    --blue-dark:#005bd4;
+    --blue-light:#eaf4ff;
+
+    --text:#101828;
+    --muted:#667085;
+
+    --white:#ffffff;
+    --border:#e4eaf2;
+
+    --dark:#07182f;
+
+    --radius:20px;
+
+    --shadow:
+    0 20px 60px rgba(16,24,40,.08);
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark{
+
+    background:#07111f;
+
+    color:#f4f7fb;
+
+    --white:#0c192b;
+    --text:#f4f7fb;
+    --muted:#a8b4c5;
+
+    --border:#1d3048;
+
+    --blue-light:#102b4c;
+
+    --shadow:
+    0 20px 70px rgba(0,0,0,.35);
+}
+
+body.dark header{
+    background:rgba(7,17,31,.88);
+}
+
+body.dark .project,
+body.dark .skill,
+body.dark .contact-box,
+body.dark .preview-card{
+    background:#0c192b;
+}
+
+body.dark .about,
+body.dark .contact{
+    background:#091729;
+}
+
+body.dark .btn-outline{
+    background:#0c192b;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:78px;
+
+    z-index:10000;
+
+    background:
+    rgba(255,255,255,.88);
+
+    backdrop-filter:
+    blur(20px);
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+.nav{
+
+    width:min(1200px,92%);
+
+    height:100%;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.logo{
+
+    text-decoration:none;
+
+    font-size:27px;
+
+    font-weight:1000;
+
+    letter-spacing:-1.5px;
+
+    color:var(--blue);
+}
+
+.logo span{
+    color:var(--text);
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    list-style:none;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    color:var(--muted);
+
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.icon-btn{
+
+    width:42px;
+    height:42px;
+
+    border:1px solid var(--border);
+
+    background:var(--white);
+
+    color:var(--text);
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+
+    transition:.25s;
+}
+
+.icon-btn:hover{
+
+    border-color:var(--blue);
+
+    color:var(--blue);
+
+    transform:translateY(-2px);
+}
+
+.menu-btn{
+    display:none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding:
+    145px 5%
+    90px;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 15%,
+        rgba(8,120,255,.18),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 10% 80%,
+        rgba(0,184,255,.10),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #eef7ff
+    );
+}
+
+body.dark .hero{
+
+    background:
+
+    radial-gradient(
+        circle at 80% 15%,
+        rgba(8,120,255,.22),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #07111f,
+        #0a1b31
+    );
+}
+
+.hero-grid{
+
+    width:min(1200px,100%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+}
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+    9px 14px;
+
+    border-radius:50px;
+
+    background:var(--blue-light);
+
+    color:var(--blue);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:22px;
+}
+
+.status-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#16c784;
+
+    box-shadow:
+    0 0 0 5px rgba(22,199,132,.12);
+
+}
+
+.hero h1{
+
+    font-size:
+    clamp(48px,7vw,88px);
+
+    line-height:.94;
+
+    letter-spacing:-5px;
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero h2{
+
+    font-size:
+    clamp(20px,3vw,28px);
+
+    color:var(--muted);
+
+    margin-bottom:20px;
+}
+
+.hero-description{
+
+    max-width:680px;
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:30px;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border:none;
+
+    padding:
+    14px 20px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:900;
+
+    transition:.3s;
+}
+
+.btn-primary{
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue),
+        #00a7ff
+    );
+
+    box-shadow:
+    0 14px 30px
+    rgba(8,120,255,.22);
+}
+
+.btn-primary:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 20px 40px
+    rgba(8,120,255,.30);
+}
+
+.btn-outline{
+
+    background:var(--white);
+
+    color:var(--blue);
+
+    border:
+    1px solid var(--blue);
+}
+
+.btn-outline:hover{
+
+    background:var(--blue);
+
+    color:white;
+}
+
+.hero-mini{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   HERO CARD
+========================================================= */
+
+.hero-right{
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.code-card{
+
+    width:
+    min(440px,100%);
+
+    border:
+    1px solid
+    rgba(255,255,255,.15);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:#07182f;
+
+    box-shadow:
+    0 40px 90px
+    rgba(8,120,255,.25);
+
+    transform:rotate(2deg);
+
+    animation:
+    floating 5s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    50%{
+        transform:
+        translateY(-12px)
+        rotate(2deg);
+    }
+}
+
+.code-top{
+
+    height:55px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    background:#0b203d;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+.code-dot{
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    opacity:.6;
+}
+
+.code-body{
+
+    padding:28px;
+
+    min-height:330px;
+
+    color:#d9e8ff;
+
+    font-family:
+    Consolas,
+    monospace;
+
+    font-size:14px;
+
+    line-height:2;
+}
+
+.code-blue{
+    color:#42a5ff;
+}
+
+.code-green{
+    color:#55d88a;
+}
+
+.code-white{
+    color:#fff;
+}
+
+.code-purple{
+    color:#b895ff;
+}
+
+.cursor{
+
+    display:inline-block;
+
+    width:7px;
+    height:17px;
+
+    background:#42a5ff;
+
+    vertical-align:middle;
+
+    animation:
+    blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+
+/* =========================================================
+   TRUST BAR
+========================================================= */
+
+.trust{
+
+    border-top:
+    1px solid var(--border);
+
+    border-bottom:
+    1px solid var(--border);
+
+    background:var(--white);
+
+    padding:28px 5%;
+}
+
+.trust-inner{
+
+    width:min(1200px,100%);
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+}
+
+.trust-item{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+section{
+    padding:110px 5%;
+}
+
+.container{
+
+    width:min(1200px,100%);
+
+    margin:auto;
+}
+
+.section-heading{
+
+    display:flex;
+
+    align-items:end;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    margin-bottom:50px;
+}
+
+.section-heading h2{
+
+    font-size:
+    clamp(34px,5vw,52px);
+
+    letter-spacing:-2.5px;
+}
+
+.section-heading h2 span{
+    color:var(--blue);
+}
+
+.section-heading p{
+
+    max-width:500px;
+
+    color:var(--muted);
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.about{
+    background:#f8fbff;
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about-title{
+
+    font-size:34px;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:20px;
+}
+
+.about-text{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+.about-list{
+
+    display:grid;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.about-list div{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+    font-weight:800;
+
+    color:var(--text);
+}
+
+.check{
+
+    width:25px;
+    height:25px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--blue-light);
+
+    color:var(--blue);
+
+    border-radius:7px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:16px;
+}
+
+.skill{
+
+    padding:25px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:18px;
+
+    background:var(--white);
+
+    transition:.3s;
+}
+
+.skill:hover{
+
+    transform:
+    translateY(-7px);
+
+    border-color:
+    rgba(8,120,255,.4);
+
+    box-shadow:
+    var(--shadow);
+}
+
+.skill-icon{
+
+    width:48px;
+    height:48px;
+
+    border-radius:13px;
+
+    background:var(--blue-light);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+}
+
+.skill h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+}
+
+.skill p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   PROJETOS
+========================================================= */
+
+.filters{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:9px;
+
+    margin-bottom:40px;
+}
+
+.filter{
+
+    padding:
+    10px 17px;
+
+    border-radius:30px;
+
+    border:
+    1px solid var(--border);
+
+    background:var(--white);
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:900;
+
+    transition:.25s;
+}
+
+.filter.active,
+.filter:hover{
+
+    background:var(--blue);
+
+    color:white;
+
+    border-color:var(--blue);
+}
+
+.projects{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.project{
+
+    background:var(--white);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    box-shadow:
+    0 5px 20px
+    rgba(16,24,40,.03);
+}
+
+.project:hover{
+
+    transform:
+    translateY(-9px);
+
+    box-shadow:
+    var(--shadow);
+}
+
+.project.hidden{
+    display:none;
+}
+
+.project-image{
+
+    height:225px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.project-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.project:hover
+.project-image img{
+    transform:scale(1.08);
+}
+
+.project-tag{
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    padding:
+    7px 11px;
+
+    background:
+    rgba(255,255,255,.93);
+
+    color:var(--blue);
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:1000;
+
+    letter-spacing:.4px;
+}
+
+.project-body{
+
+    padding:23px;
+}
+
+.project-body h3{
+
+    font-size:20px;
+
+    margin-bottom:9px;
+}
+
+.project-body p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.65;
+
+    min-height:46px;
+
+    margin-bottom:18px;
+}
+
+.techs{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:18px;
+}
+
+.tech{
+
+    background:var(--blue-light);
+
+    color:var(--blue);
+
+    padding:
+    5px 9px;
+
+    border-radius:6px;
+
+    font-size:10px;
+
+    font-weight:900;
+}
+
+.project-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+}
+
+.project-view{
+
+    flex:1;
+
+    border:none;
+
+    padding:
+    11px 14px;
+
+    border-radius:9px;
+
+    background:var(--blue);
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    transition:.25s;
+}
+
+.project-view:hover{
+    background:var(--blue-dark);
+}
+
+.like-btn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:
+    var(--blue-light);
+
+    color:var(--blue);
+
+    font-size:18px;
+
+    transition:.25s;
+}
+
+.like-btn.liked{
+
+    background:#ffe7ed;
+
+    color:#ff3158;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    background:
+    linear-gradient(
+        135deg,
+        #06172e,
+        #0a2e59
+    );
+
+    color:white;
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+}
+
+.stat{
+
+    padding:25px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.10);
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,.035);
+
+    text-align:center;
+}
+
+.stat-number{
+
+    font-size:45px;
+
+    font-weight:1000;
+
+    color:#42a5ff;
+
+    margin-bottom:5px;
+}
+
+.stat p{
+
+    color:#aebbd0;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+}
+
+.process{
+
+    padding:27px;
+
+    border:
+    1px solid var(--border);
+
+    background:var(--white);
+
+    border-radius:18px;
+
+    position:relative;
+}
+
+.process-number{
+
+    color:var(--blue);
+
+    font-size:12px;
+
+    font-weight:1000;
+
+    margin-bottom:25px;
+}
+
+.process h3{
+
+    margin-bottom:10px;
+}
+
+.process p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    padding:
+    80px 5%;
+}
+
+.cta-box{
+
+    width:min(1200px,100%);
+
+    margin:auto;
+
+    padding:
+    65px;
+
+    border-radius:30px;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(255,255,255,.15),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #0878ff,
+        #0047a8
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+}
+
+.cta-box h2{
+
+    font-size:42px;
+
+    letter-spacing:-2px;
+
+    margin-bottom:10px;
+}
+
+.cta-box p{
+    color:#d9ecff;
+}
+
+
+/* =========================================================
+   CONTATO
+========================================================= */
+
+.contact{
+    background:#f8fbff;
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    .8fr 1.2fr;
+
+    gap:50px;
+
+    align-items:start;
+}
+
+.contact-info h3{
+
+    font-size:35px;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:15px;
+}
+
+.contact-info > p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.contact-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:13px;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+.contact-link span{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--blue-light);
+
+    color:var(--blue);
+
+    border-radius:10px;
+}
+
+.contact-box{
+
+    background:var(--white);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:
+    var(--shadow);
+}
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:13px;
+}
+
+.form-group{
+    margin-bottom:13px;
+}
+
+.form-group label{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:7px;
+
+    color:var(--muted);
+}
+
+.form-group input,
+.form-group textarea{
+
+    width:100%;
+
+    border:
+    1px solid var(--border);
+
+    background:
+    var(--white);
+
+    color:var(--text);
+
+    outline:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    transition:.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    border-color:var(--blue);
+
+    box-shadow:
+    0 0 0 4px
+    rgba(8,120,255,.08);
+}
+
+.form-group textarea{
+
+    min-height:145px;
+
+    resize:vertical;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#06172d;
+
+    color:#9db0c8;
+
+    padding:
+    35px 5%;
+}
+
+.footer-inner{
+
+    width:min(1200px,100%);
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer-logo{
+
+    color:#42a5ff;
+
+    font-size:22px;
+
+    font-weight:1000;
+}
+
+.footer-copy{
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(1,8,18,.82);
+
+    backdrop-filter:
+    blur(10px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+
+    z-index:30000;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-box{
+
+    width:min(1100px,100%);
+
+    height:min(750px,94vh);
+
+    background:var(--white);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:
+    0 40px 120px
+    rgba(0,0,0,.45);
+}
+
+.modal-header{
+
+    height:65px;
+
+    flex-shrink:0;
+
+    padding:
+    0 20px;
+
+    border-bottom:
+    1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.modal-header h3{
+    color:var(--blue);
+}
+
+.close{
+
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--blue);
+
+    color:white;
+
+    font-size:22px;
+}
+
+.modal-body{
+
+    flex:1;
+
+    overflow:auto;
+
+    background:
+    #eef4fa;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.preview{
+
+    min-height:100%;
+
+    padding:35px;
+}
+
+.preview-hero{
+
+    padding:45px 25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #07182f,
+        #0878ff
+    );
+}
+
+.preview-hero h1{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.preview-hero p{
+    color:#d8eaff;
+}
+
+.preview-products{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+}
+
+.preview-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:15px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(16,24,40,.07);
+}
+
+.preview-card img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    margin-bottom:13px;
+}
+
+.preview-card h3{
+    margin-bottom:6px;
+}
+
+.preview-card p{
+
+    color:#667085;
+
+    font-size:13px;
+}
+
+.preview-card button{
+
+    width:100%;
+
+    border:none;
+
+    background:#0878ff;
+
+    color:white;
+
+    padding:11px;
+
+    border-radius:8px;
+
+    margin-top:13px;
+
+    font-weight:900;
+}
+
+
+/* SOCIAL PREVIEW */
+
+.social-preview{
+
+    max-width:500px;
+
+    margin:auto;
+}
+
+.social-post{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:15px;
+
+    margin-bottom:18px;
+
+    box-shadow:
+    0 10px 25px
+    rgba(16,24,40,.07);
+}
+
+.social-photo{
+
+    height:300px;
+
+    margin:13px 0;
+
+    border-radius:12px;
+
+    overflow:hidden;
+}
+
+.social-photo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.social-buttons{
+
+    display:flex;
+
+    gap:8px;
+}
+
+.social-buttons button{
+
+    border:none;
+
+    background:#edf4fb;
+
+    padding:10px 14px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+}
+
+
+/* GAME PREVIEW */
+
+.game{
+
+    min-height:100%;
+
+    background:#101010;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+.game-road{
+
+    position:relative;
+
+    width:min(600px,100%);
+
+    height:430px;
+
+    margin:25px auto;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #171717 0 28%,
+        #565656 28% 72%,
+        #171717 72% 100%
+    );
+}
+
+.game-road::before,
+.game-road::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    width:8px;
+
+    height:200%;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        white 0 70px,
+        transparent 70px 130px
+    );
+
+    animation:
+    road 1s linear infinite;
+}
+
+.game-road::before{
+    left:34%;
+}
+
+.game-road::after{
+    right:34%;
+}
+
+@keyframes road{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(130px);
+    }
+}
+
+.game-bike{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:
+    translateX(-50%);
+
+    font-size:85px;
+
+    z-index:3;
+}
+
+.game-controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+.game-controls button{
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:9px;
+
+    background:#0878ff;
+
+    color:white;
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+
+    position:fixed;
+
+    bottom:25px;
+    left:50%;
+
+    transform:
+    translate(-50%,30px);
+
+    background:#07182f;
+
+    color:white;
+
+    padding:
+    14px 20px;
+
+    border-radius:10px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:50000;
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:
+    translate(-50%,0);
+}
+
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+.scroll-top{
+
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--blue);
+
+    color:white;
+
+    font-size:18px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:9000;
+}
+
+.scroll-top.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(25px);
+
+    transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-right{
+        order:-1;
+    }
+
+    .code-card{
+        max-width:500px;
+    }
+
+    .projects{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .stats-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:760px){
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+        left:0;
+
+        width:100%;
+
+        background:var(--white);
+
+        border-bottom:
+        1px solid var(--border);
+
+        padding:25px;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:20px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:flex;
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-heading{
+        display:block;
+    }
+
+    .section-heading p{
+        margin-top:15px;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .preview-products{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .cta-box{
+        padding:40px 25px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .cta-box h2{
+        font-size:32px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:80px 5%;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .skills-grid,
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-number{
+        font-size:34px;
+    }
+
+    .contact-box{
+        padding:20px;
+    }
+
+    .preview{
+        padding:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+<nav class="nav">
+
+<a
+href="#inicio"
+class="logo">
+DKAVIZ<span>Zi</span>
+</a>
+
+
+<ul
+class="nav-links"
+id="navLinks">
+
+<li>
+<a href="#inicio">
+Início
+</a>
+</li>
+
+<li>
+<a href="#sobre">
+Sobre
+</a>
+</li>
+
+<li>
+<a href="#projetos">
+Projetos
+</a>
+</li>
+
+<li>
+<a href="#processo">
+Processo
+</a>
+</li>
+
+<li>
+<a href="#contato">
+Contato
+</a>
+</li>
+
+</ul>
+
+
+<div class="header-actions">
+
+<button
+class="icon-btn"
+id="themeBtn"
+title="Alternar tema">
+☾
+</button>
+
+<button
+class="icon-btn menu-btn"
+id="menuBtn"
+title="Menu">
+☰
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section
+class="hero"
+id="inicio">
+
+<div class="hero-grid">
+
+
+<div class="reveal">
+
+<div class="status">
+
+<span class="status-dot"></span>
+
+Disponível para novos projetos
+
+</div>
+
+
+<h1>
+
+Desenvolvedor
+<br>
+
+<span>Web.</span>
+
+</h1>
+
+
+<h2>
+
+Transformo ideias em experiências digitais.
+
+</h2>
+
+
+<p class="hero-description">
+
+Desenvolvo sites modernos, responsivos e
+interativos com foco em design, performance,
+experiência do usuário e resultados.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#projetos"
+class="btn btn-primary">
+
+Ver projetos →
+
+</a>
+
+
+<a
+href="#contato"
+class="btn btn-outline">
+
+Vamos conversar
+
+</a>
+
+</div>
+
+
+<div class="hero-mini">
+
+<span>
+✓ Design responsivo
+</span>
+
+<span>
+✓ Código organizado
+</span>
+
+<span>
+✓ Experiência moderna
+</span>
+
+</div>
+
+</div>
+
+
+<div class="hero-right reveal">
+
+<div class="code-card">
+
+<div class="code-top">
+
+<span class="code-dot"></span>
+<span class="code-dot"></span>
+<span class="code-dot"></span>
+
+</div>
+
+
+<div class="code-body">
+
+<span class="code-purple">
+const
+</span>
+
+<span class="code-blue">
+developer
+</span>
+
+=
+
+<span class="code-green">
+{
+</span>
+
+<br>
+
+&nbsp;&nbsp;
+name:
+
+<span class="code-white">
+"DKAVIZZi"
+</span>,
+
+<br>
+
+&nbsp;&nbsp;
+role:
+
+<span class="code-white">
+"Web Developer"
+</span>,
+
+<br>
+
+&nbsp;&nbsp;
+skills:
+
+<span class="code-green">
+[
+</span>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="code-white">
+"HTML"
+</span>,
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="code-white">
+"CSS"
+</span>,
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="code-white">
+"JavaScript"
+</span>
+
+<br>
+
+&nbsp;&nbsp;
+<span class="code-green">
+]
+</span>,
+
+<br>
+
+&nbsp;&nbsp;
+passion:
+
+<span class="code-white">
+true
+</span>
+
+<br>
+
+<span class="code-green">
+}
+</span>
+
+<br><br>
+
+<span class="code-blue">
+developer
+</span>.
+
+<span class="code-white">
+create()
+</span>
+
+<span class="cursor"></span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     TRUST
+====================================================== -->
+
+<div class="trust">
+
+<div class="trust-inner">
+
+<div class="trust-item">
+⚡ PERFORMANCE
+</div>
+
+<div class="trust-item">
+🎨 UI / UX
+</div>
+
+<div class="trust-item">
+📱 RESPONSIVE
+</div>
+
+<div class="trust-item">
+💻 FRONT-END
+</div>
+
+<div class="trust-item">
+🚀 EXPERIÊNCIAS DIGITAIS
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     SOBRE
+====================================================== -->
+
+<section
+class="about"
+id="sobre">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div>
+
+<h2>
+Sobre <span>mim</span>
+</h2>
+
+</div>
+
+<p>
+Desenvolvimento com criatividade,
+tecnologia e atenção aos detalhes.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="reveal">
+
+<h3 class="about-title">
+
+Código bonito.
+<br>
+Experiência melhor.
+
+</h3>
+
+
+<p class="about-text">
+
+Sou DKAVIZZi, desenvolvedor focado em
+criar experiências digitais modernas,
+visualmente profissionais e funcionais.
+
+</p>
+
+
+<p class="about-text">
+
+Cada projeto é pensado para funcionar
+bem em diferentes telas, ter uma identidade
+visual forte e proporcionar uma experiência
+simples para o usuário.
+
+</p>
+
+
+<div class="about-list">
+
+<div>
+<span class="check">✓</span>
+Interfaces modernas
+</div>
+
+<div>
+<span class="check">✓</span>
+Sites responsivos
+</div>
+
+<div>
+<span class="check">✓</span>
+Interações com JavaScript
+</div>
+
+<div>
+<span class="check">✓</span>
+Foco em experiência do usuário
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skills-grid reveal">
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🌐
+</div>
+
+<h3>
+HTML5
+</h3>
+
+<p>
+Estrutura semântica,
+organização e acessibilidade.
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🎨
+</div>
+
+<h3>
+CSS3
+</h3>
+
+<p>
+Interfaces modernas,
+animações e responsividade.
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+⚡
+</div>
+
+<h3>
+JavaScript
+</h3>
+
+<p>
+Interações, lógica e
+funcionalidades dinâmicas.
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🎮
+</div>
+
+<h3>
+Projetos Interativos
+</h3>
+
+<p>
+Experiências para web
+e jogos de navegador.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     STATS
+====================================================== -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid reveal">
+
+
+<div class="stat">
+
+<div
+class="stat-number"
+data-number="8">
+0
+</div>
+
+<p>
+Projetos apresentados
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<div
+class="stat-number"
+data-number="3">
+0
+</div>
+
+<p>
+Tecnologias principais
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<div
+class="stat-number"
+data-number="100"
+data-suffix="%">
+0
+</div>
+
+<p>
+Dedicação
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-number">
+∞
+</div>
+
+<p>
+Possibilidades
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PROJETOS
+====================================================== -->
+
+<section
+id="projetos">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div>
+
+<h2>
+Projetos <span>selecionados</span>
+</h2>
+
+</div>
+
+<p>
+Uma seleção de projetos que demonstra
+diferentes áreas do desenvolvimento web.
+</p>
+
+</div>
+
+
+<div class="filters reveal">
+
+<button
+class="filter active"
+data-filter="todos">
+Todos
+</button>
+
+<button
+class="filter"
+data-filter="loja">
+E-commerce
+</button>
+
+<button
+class="filter"
+data-filter="web">
+Web
+</button>
+
+<button
+class="filter"
+data-filter="social">
+Social
+</button>
+
+<button
+class="filter"
+data-filter="game">
+Games
+</button>
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- PROJETO 1 -->
+
+<article
+class="project reveal"
+data-category="loja">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=85"
+alt="Projeto de perfumaria">
+
+<span class="project-tag">
+E-COMMERCE
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+DKAVIZZi Perfumaria
+</h3>
+
+<p>
+Loja virtual premium para apresentação
+e venda de perfumes.
+</p>
+
+<div class="techs">
+
+<span class="tech">HTML</span>
+<span class="tech">CSS</span>
+<span class="tech">JavaScript</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('perfume')">
+
+Visualizar projeto →
+
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJETO 2 -->
+
+<article
+class="project reveal"
+data-category="loja">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1000&q=85"
+alt="Projeto de moda">
+
+<span class="project-tag">
+E-COMMERCE
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+Essenza Lingerie
+</h3>
+
+<p>
+E-commerce com identidade visual
+elegante e experiência responsiva.
+</p>
+
+<div class="techs">
+
+<span class="tech">HTML</span>
+<span class="tech">CSS</span>
+<span class="tech">JS</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('lingerie')">
+Visualizar projeto →
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJETO 3 -->
+
+<article
+class="project reveal"
+data-category="social">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+alt="Rede social">
+
+<span class="project-tag">
+SOCIAL
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+FotoSpace
+</h3>
+
+<p>
+Conceito de rede social com feed,
+publicações e interações.
+</p>
+
+<div class="techs">
+
+<span class="tech">HTML</span>
+<span class="tech">CSS</span>
+<span class="tech">JavaScript</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('social')">
+Visualizar projeto →
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJETO 4 -->
+
+<article
+class="project reveal"
+data-category="game">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
+alt="Jogo de moto">
+
+<span class="project-tag">
+GAME
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+Moto 3D
+</h3>
+
+<p>
+Experiência interativa de jogo de moto
+para navegador.
+</p>
+
+<div class="techs">
+
+<span class="tech">JavaScript</span>
+<span class="tech">CSS</span>
+<span class="tech">Game</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('moto')">
+Visualizar projeto →
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJETO 5 -->
+
+<article
+class="project reveal"
+data-category="web">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85"
+alt="Interface web">
+
+<span class="project-tag">
+WEB
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+DKAVIZZi Portfolio
+</h3>
+
+<p>
+Portfólio profissional para apresentação
+de projetos e habilidades.
+</p>
+
+<div class="techs">
+
+<span class="tech">HTML</span>
+<span class="tech">CSS</span>
+<span class="tech">UI</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('portfolio')">
+Visualizar projeto →
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJETO 6 -->
+
+<article
+class="project reveal"
+data-category="loja">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+alt="E-commerce">
+
+<span class="project-tag">
+E-COMMERCE
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+ShopX
+</h3>
+
+<p>
+Conceito de marketplace moderno
+com catálogo de produtos.
+</p>
+
+<div class="techs">
+
+<span class="tech">HTML</span>
+<span class="tech">CSS</span>
+<span class="tech">JS</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('shop')">
+Visualizar projeto →
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJETO 7 -->
+
+<article
+class="project reveal"
+data-category="game">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=85"
+alt="Game retrô">
+
+<span class="project-tag">
+GAME
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+Pixel Adventure
+</h3>
+
+<p>
+Conceito de jogo inspirado em
+aventuras retrô.
+</p>
+
+<div class="techs">
+
+<span class="tech">JavaScript</span>
+<span class="tech">Game</span>
+<span class="tech">UI</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('pixel')">
+Visualizar projeto →
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJETO 8 -->
+
+<article
+class="project reveal"
+data-category="web">
+
+<div class="project-image">
+
+<img
+src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85"
+alt="Dashboard">
+
+<span class="project-tag">
+DASHBOARD
+</span>
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+Dashboard Pro
+</h3>
+
+<p>
+Painel administrativo com indicadores
+e visualização de dados.
+</p>
+
+<div class="techs">
+
+<span class="tech">HTML</span>
+<span class="tech">CSS</span>
+<span class="tech">JavaScript</span>
+
+</div>
+
+
+<div class="project-actions">
+
+<button
+class="project-view"
+onclick="openProject('dashboard')">
+Visualizar projeto →
+</button>
+
+<button
+class="like-btn"
+onclick="toggleLike(this)">
+♡
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PROCESSO
+====================================================== -->
+
+<section
+id="processo"
+class="about">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div>
+
+<h2>
+Meu <span>processo</span>
+</h2>
+
+</div>
+
+<p>
+Do primeiro conceito até a experiência final.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process reveal">
+
+<div class="process-number">
+01 / DISCOVERY
+</div>
+
+<h3>
+Entender
+</h3>
+
+<p>
+Entendo o objetivo, público e
+necessidades do projeto.
+</p>
+
+</div>
+
+
+<div class="process reveal">
+
+<div class="process-number">
+02 / DESIGN
+</div>
+
+<h3>
+Planejar
+</h3>
+
+<p>
+Defino estrutura, identidade visual
+e experiência do usuário.
+</p>
+
+</div>
+
+
+<div class="process reveal">
+
+<div class="process-number">
+03 / DEVELOPMENT
+</div>
+
+<h3>
+Desenvolver
+</h3>
+
+<p>
+Transformo o planejamento em
+código funcional e responsivo.
+</p>
+
+</div>
+
+
+<div class="process reveal">
+
+<div class="process-number">
+04 / DELIVERY
+</div>
+
+<h3>
+Entregar
+</h3>
+
+<p>
+Testo, ajusto e preparo o projeto
+para publicação.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     CTA
+====================================================== -->
+
+<div class="cta">
+
+<div class="cta-box reveal">
+
+<div>
+
+<h2>
+Tem um projeto em mente?
+</h2>
+
+<p>
+Vamos transformar sua ideia em algo profissional.
+</p>
+
+</div>
+
+
+<a
+href="#contato"
+class="btn"
+style="
+background:white;
+color:#0878ff;
+">
+
+Começar projeto →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     CONTATO
+====================================================== -->
+
+<section
+class="contact"
+id="contato">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div>
+
+<h2>
+Vamos <span>conversar?</span>
+</h2>
+
+</div>
+
+<p>
+Estou disponível para conversar sobre
+novos projetos e ideias.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-info reveal">
+
+<h3>
+Entre em contato.
+</h3>
+
+<p>
+Envie sua ideia, dúvida ou proposta.
+Você pode falar comigo diretamente
+por e-mail ou WhatsApp.
+</p>
+
+
+<a
+class="contact-link"
+href="mailto:felipelimadossantosdavi@gmail.com">
+
+<span>✉</span>
+
+felipelimadossantosdavi@gmail.com
+
+</a>
+
+
+<a
+class="contact-link"
+href="https://wa.me/5563992283608"
+target="_blank">
+
+<span>☏</span>
+
+WhatsApp: (63) 99228-3608
+
+</a>
+
+
+<button
+class="btn btn-outline"
+onclick="copyEmail()">
+
+Copiar meu e-mail
+
+</button>
+
+</div>
+
+
+<div class="contact-box reveal">
+
+<form
+id="contactForm">
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>
+Nome
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Seu nome"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+E-mail
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="seuemail@email.com"
+required>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Assunto
+</label>
+
+<input
+id="subject"
+type="text"
+placeholder="Como posso ajudar?"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Mensagem
+</label>
+
+<textarea
+id="message"
+placeholder="Conte um pouco sobre seu projeto..."
+required>
+</textarea>
+
+</div>
+
+
+<button
+class="btn btn-primary"
+style="width:100%;"
+type="submit">
+
+Enviar mensagem →
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-logo">
+DKAVIZZi
+</div>
+
+<div class="footer-copy">
+© 2026 DKAVIZZi — Desenvolvedor Web.
+</div>
+
+<div class="footer-copy">
+Feito com HTML • CSS • JavaScript
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ======================================================
+     MODAL
+====================================================== -->
+
+<div
+class="modal"
+id="modal">
+
+<div class="modal-box">
+
+
+<div class="modal-header">
+
+<h3
+id="modalTitle">
+Projeto
+</h3>
+
+
+<button
+class="close"
+onclick="closeProject()">
+×
+</button>
+
+</div>
+
+
+<div
+class="modal-body"
+id="modalBody">
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+class="toast"
+id="toast">
+Mensagem
+</div>
+
+
+<!-- SCROLL TOP -->
+
+<button
+class="scroll-top"
+id="scrollTop"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================================================
+   ELEMENTOS
+========================================================= */
+
+const modal =
+document.getElementById("modal");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+const modalBody =
+document.getElementById("modalBody");
+
+const toast =
+document.getElementById("toast");
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(text){
+
+    toast.textContent=text;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2500);
+
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuBtn.addEventListener(
+"click",
+()=>{
+
+    navLinks.classList.toggle("open");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener(
+    "click",
+    ()=>{
+        navLinks.classList.remove("open");
+    });
+
+});
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+const themeBtn =
+document.getElementById("themeBtn");
+
+
+themeBtn.addEventListener(
+"click",
+()=>{
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+    document.body.classList.contains("dark");
+
+    themeBtn.textContent =
+    dark ? "☀" : "☾";
+
+    localStorage.setItem(
+    "dkaviz-theme",
+    dark ? "dark" : "light"
+    );
+
+});
+
+
+if(
+localStorage.getItem("dkaviz-theme")
+==="dark"
+){
+
+    document.body.classList.add("dark");
+
+    themeBtn.textContent="☀";
+
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+const filters =
+document.querySelectorAll(".filter");
+
+const projects =
+document.querySelectorAll(".project");
+
+
+filters.forEach(filter=>{
+
+    filter.addEventListener(
+    "click",
+    ()=>{
+
+        filters.forEach(
+        f=>f.classList.remove("active")
+        );
+
+        filter.classList.add("active");
+
+        const category =
+        filter.dataset.filter;
+
+        projects.forEach(project=>{
+
+            if(
+            category==="todos" ||
+            project.dataset.category===category
+            ){
+
+                project.classList.remove("hidden");
+
+            }else{
+
+                project.classList.add("hidden");
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   LIKE
+========================================================= */
+
+function toggleLike(button){
+
+    button.classList.toggle("liked");
+
+    if(
+    button.classList.contains("liked")
+    ){
+
+        button.textContent="♥";
+
+        showToast(
+        "Projeto adicionado aos favoritos ❤️"
+        );
+
+    }else{
+
+        button.textContent="♡";
+
+    }
+
+}
+
+
+/* =========================================================
+   PRODUTO
+========================================================= */
+
+function productCard(name,image){
+
+    return `
+
+    <div class="preview-card">
+
+        <img
+        src="${image}"
+        alt="${name}">
+
+        <h3>
+        ${name}
+        </h3>
+
+        <p>
+        Produto premium
+        </p>
+
+        <button
+        onclick="showToast('Produto selecionado ✓')">
+
+        Ver produto
+
+        </button>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   ABRIR PROJETO
+========================================================= */
+
+function openProject(type){
+
+    let html="";
+
+
+    /* PERFUME */
+
+    if(type==="perfume"){
+
+        modalTitle.textContent=
+        "DKAVIZZi Perfumaria";
+
+        html=`
+
+        <div class="preview">
+
+            <div class="preview-hero">
+
+                <h1>
+                DKAVIZZi
+                </h1>
+
+                <p>
+                Perfumaria Premium
+                </p>
+
+            </div>
+
+            <div class="preview-products">
+
+                ${productCard(
+                "Blue Night",
+                "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85"
+                )}
+
+                ${productCard(
+                "Royal",
+                "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=85"
+                )}
+
+                ${productCard(
+                "Ocean",
+                "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=85"
+                )}
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* LINGERIE */
+
+    if(type==="lingerie"){
+
+        modalTitle.textContent=
+        "Essenza Lingerie";
+
+        html=`
+
+        <div class="preview">
+
+            <div class="preview-hero">
+
+                <h1>
+                ESSENZA
+                </h1>
+
+                <p>
+                Elegância em todos os detalhes
+                </p>
+
+            </div>
+
+            <div class="preview-products">
+
+                ${productCard(
+                "Elegance",
+                "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=85"
+                )}
+
+                ${productCard(
+                "Premium",
+                "https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=700&q=85"
+                )}
+
+                ${productCard(
+                "Classic",
+                "https://images.unsplash.com/photo-1583846783214-7229a91b20ed?auto=format&fit=crop&w=700&q=85"
+                )}
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* SOCIAL */
+
+    if(type==="social"){
+
+        modalTitle.textContent=
+        "FotoSpace";
+
+        html=`
+
+        <div class="preview">
+
+            <div class="preview-hero">
+
+                <h1>
+                FotoSpace
+                </h1>
+
+                <p>
+                Sua rede. Seus momentos.
+                </p>
+
+            </div>
+
+
+            <div class="social-preview">
+
+                <div class="social-post">
+
+                    <strong>
+                    @dkaviz
+                    </strong>
+
+                    <div class="social-photo">
+
+                        <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85">
+
+                    </div>
+
+                    <div class="social-buttons">
+
+                        <button
+                        onclick="showToast('Publicação curtida ❤️')">
+
+                        ❤️ Curtir
+
+                        </button>
+
+                        <button
+                        onclick="showToast('Comentários abertos 💬')">
+
+                        💬 Comentar
+
+                        </button>
+
+                        <button
+                        onclick="showToast('Publicação compartilhada ↗')">
+
+                        ↗ Compartilhar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* MOTO */
+
+    if(type==="moto"){
+
+        modalTitle.textContent=
+        "Moto 3D — DKAVIZ";
+
+        html=`
+
+        <div class="game">
+
+            <h1 style="color:#42a5ff;">
+            🏍️ MOTO 3D
+            </h1>
+
+            <p>
+            Demonstração interativa
+            </p>
+
+
+            <div class="game-road">
+
+                <div
+                class="game-bike"
+                id="gameBike">
+
+                🏍️
+
+                </div>
+
+            </div>
+
+
+            <div class="game-controls">
+
+                <button
+                onclick="gameAction('acelerar')">
+                ⚡ Acelerar
+                </button>
+
+                <button
+                onclick="gameAction('frear')">
+                🛑 Frear
+                </button>
+
+                <button
+                onclick="gameAction('nitro')">
+                🚀 Nitro
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* PORTFOLIO */
+
+    if(type==="portfolio"){
+
+        modalTitle.textContent=
+        "Portfólio DKAVIZZi";
+
+        html=`
+
+        <div class="preview">
+
+            <div class="preview-hero">
+
+                <h1>
+                DKAVIZZi
+                </h1>
+
+                <p>
+                Desenvolvedor Web
+                </p>
+
+            </div>
+
+
+            <div class="preview-products">
+
+                <div class="preview-card">
+                    <h2 style="color:#0878ff;">
+                    8+
+                    </h2>
+                    <p>
+                    Projetos
+                    </p>
+                </div>
+
+                <div class="preview-card">
+                    <h2 style="color:#0878ff;">
+                    HTML
+                    </h2>
+                    <p>
+                    Desenvolvimento
+                    </p>
+                </div>
+
+                <div class="preview-card">
+                    <h2 style="color:#0878ff;">
+                    JS
+                    </h2>
+                    <p>
+                    Interatividade
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* SHOP */
+
+    if(type==="shop"){
+
+        modalTitle.textContent=
+        "ShopX";
+
+        html=`
+
+        <div class="preview">
+
+            <div class="preview-hero">
+
+                <h1>
+                SHOPX
+                </h1>
+
+                <p>
+                E-commerce moderno
+                </p>
+
+            </div>
+
+            <div class="preview-products">
+
+                ${productCard(
+                "Sneaker",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85"
+                )}
+
+                ${productCard(
+                "Watch",
+                "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85"
+                )}
+
+                ${productCard(
+                "Headphone",
+                "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
+                )}
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* PIXEL */
+
+    if(type==="pixel"){
+
+        modalTitle.textContent=
+        "Pixel Adventure";
+
+        html=`
+
+        <div class="game">
+
+            <h1 style="color:#42a5ff;">
+            🎮 PIXEL ADVENTURE
+            </h1>
+
+            <p>
+            Uma aventura digital.
+            </p>
+
+
+            <div style="
+
+            width:min(700px,100%);
+
+            height:350px;
+
+            margin:30px auto;
+
+            border-radius:20px;
+
+            background:
+            linear-gradient(
+                #67c8ff 0 60%,
+                #48a548 60%
+            );
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            font-size:90px;
+
+            ">
+
+            🧙
+
+            </div>
+
+
+            <button
+            class="game-controls button"
+            onclick="showToast('🎮 Jogo iniciado!')">
+
+            JOGAR
+
+            </button>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* DASHBOARD */
+
+    if(type==="dashboard"){
+
+        modalTitle.textContent=
+        "Dashboard Pro";
+
+        html=`
+
+        <div class="preview">
+
+            <div class="preview-hero">
+
+                <h1>
+                Dashboard Pro
+                </h1>
+
+                <p>
+                Painel administrativo
+                </p>
+
+            </div>
+
+
+            <div class="preview-products">
+
+                <div class="preview-card">
+
+                    <h2 style="color:#0878ff;">
+                    R$ 12.540
+                    </h2>
+
+                    <p>
+                    Faturamento
+                    </p>
+
+                </div>
+
+
+                <div class="preview-card">
+
+                    <h2 style="color:#0878ff;">
+                    1.284
+                    </h2>
+
+                    <p>
+                    Clientes
+                    </p>
+
+                </div>
+
+
+                <div class="preview-card">
+
+                    <h2 style="color:#0878ff;">
+                    +89%
+                    </h2>
+
+                    <p>
+                    Crescimento
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    modalBody.innerHTML=html;
+
+    modal.classList.add("open");
+
+    document.body.style.overflow="hidden";
+
+}
+
+
+/* =========================================================
+   GAME
+========================================================= */
+
+let speed=120;
+
+
+function gameAction(action){
+
+    if(action==="acelerar"){
+
+        speed+=20;
+
+        if(speed>300)
+        speed=300;
+
+        showToast(
+        "⚡ Velocidade: "+speed+" KM/H"
+        );
+
+    }
+
+
+    if(action==="frear"){
+
+        speed-=20;
+
+        if(speed<0)
+        speed=0;
+
+        showToast(
+        "🛑 Velocidade: "+speed+" KM/H"
+        );
+
+    }
+
+
+    if(action==="nitro"){
+
+        speed+=60;
+
+        if(speed>300)
+        speed=300;
+
+        showToast(
+        "🚀 NITRO ATIVADO!"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   FECHAR MODAL
+========================================================= */
+
+function closeProject(){
+
+    modal.classList.remove("open");
+
+    modalBody.innerHTML="";
+
+    document.body.style.overflow="";
+
+}
+
+
+modal.addEventListener(
+"click",
+function(event){
+
+    if(event.target===modal){
+        closeProject();
+    }
+
+});
+
+
+document.addEventListener(
+"keydown",
+function(event){
+
+    if(event.key==="Escape"){
+        closeProject();
+    }
+
+});
+
+
+/* =========================================================
+   COPIAR E-MAIL
+========================================================= */
+
+function copyEmail(){
+
+    const email=
+    "felipelimadossantosdavi@gmail.com";
+
+    navigator.clipboard
+    .writeText(email)
+    .then(()=>{
+
+        showToast(
+        "E-mail copiado ✓"
+        );
+
+    })
+    .catch(()=>{
+
+        showToast(
+        "E-mail: "+email
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+document
+.getElementById("contactForm")
+.addEventListener(
+"submit",
+function(event){
+
+    event.preventDefault();
+
+
+    const name=
+    document.getElementById("name").value;
+
+    const email=
+    document.getElementById("email").value;
+
+    const subject=
+    document.getElementById("subject").value;
+
+    const message=
+    document.getElementById("message").value;
+
+
+    const mailSubject=
+    encodeURIComponent(
+    subject+
+    " — Contato pelo Portfólio DKAVIZZi"
+    );
+
+
+    const mailBody=
+    encodeURIComponent(
+
+    "Olá DKAVIZZi!\n\n"+
+    "Nome: "+name+"\n"+
+    "E-mail: "+email+"\n\n"+
+    "Mensagem:\n"+
+    message
+
+    );
+
+
+    window.location.href=
+    "mailto:felipelimadossantosdavi@gmail.com"+
+    "?subject="+
+    mailSubject+
+    "&body="+
+    mailBody;
+
+});
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+const revealObserver=
+new IntersectionObserver(
+(entries)=>{
+
+    entries.forEach(
+    entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target
+            .classList
+            .add("visible");
+
+            revealObserver
+            .unobserve(entry.target);
+
+        }
+
+    });
+
+},
+{
+    threshold:.12
+});
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element=>{
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   STATS ANIMATION
+========================================================= */
+
+const statsObserver=
+new IntersectionObserver(
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const number=
+            entry.target.dataset.number;
+
+            if(!number)
+            return;
+
+
+            const suffix=
+            entry.target.dataset.suffix || "";
+
+
+            let current=0;
+
+            const target=
+            Number(number);
+
+
+            const interval=
+            setInterval(()=>{
+
+                current++;
+
+                entry.target.textContent=
+                current+
+                suffix;
+
+
+                if(current>=target){
+
+                    clearInterval(interval);
+
+                }
+
+            },15);
+
+
+            statsObserver
+            .unobserve(entry.target);
+
+        }
+
+    });
+
+},
+{
+    threshold:.8
+});
+
+
+document
+.querySelectorAll(".stat-number[data-number]")
+.forEach(element=>{
+
+    statsObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+const scrollTop=
+document.getElementById("scrollTop");
+
+
+window.addEventListener(
+"scroll",
+()=>{
+
+    if(window.scrollY>500){
+
+        scrollTop.classList.add("show");
+
+    }else{
+
+        scrollTop.classList.remove("show");
+
+    }
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
+```
